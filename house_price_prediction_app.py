@@ -41,9 +41,7 @@ st.title("House Price Prediction App")
 # Data Loading
 # Keep the CSV file in the same folder as this Python file.
 # ---------------------------------------------------------
-BASE_FOLDER = "C:\\Users\\admin\\Desktop\\Tops Technology\\Machine Learning\\data set\\3 House price"
-
-DATASET_PATH = Path(BASE_FOLDER) / "house_price_regression_dataset.csv"
+DATASET_PATH = "house_price_regression_dataset.csv"
 
 if not DATASET_PATH.exists():
     st.error(
