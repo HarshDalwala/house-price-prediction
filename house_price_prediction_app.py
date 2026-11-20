@@ -39,9 +39,10 @@ st.title("House Price Prediction App")
 
 # ---------------------------------------------------------
 # Data Loading
-# Keep the CSV file in the same folder as this Python file.
 # ---------------------------------------------------------
-DATASET_PATH = "house_price_regression_dataset.csv"
+BASE_DIR = Path(__file__).resolve().parent
+
+DATASET_PATH = BASE_DIR / "house_price_regression_dataset.csv"
 
 if not DATASET_PATH.exists():
     st.error(
@@ -51,11 +52,12 @@ if not DATASET_PATH.exists():
     )
     st.stop()
 
+
 @st.cache_data
 def load_data(file_path):
     return pd.read_csv(file_path)
 
-df = load_data(str(DATASET_PATH))
+df = load_data(DATASET_PATH)
 
 # Target and feature columns from the inspected dataset
 target_column = "House_Price"
